@@ -5,7 +5,7 @@ import Card from "./components/Card.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Card
-      title="My title"
+      title="My title test"
       description="My description"
       image="https://picsum.photos/200/300"
     />
