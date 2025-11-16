@@ -40,6 +40,7 @@ jobs:
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
         docker build -t foo .
+        docker build -t foo:latest -t foo:${{ github.sha }} .
 
     - name: Push Docker image
       run: |
