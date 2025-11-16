@@ -39,11 +39,10 @@ jobs:
     - name: Build Docker image
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
-        docker build -t foo .
-        docker build -t foo:latest -t foo:${{ github.sha }} .
-
+        docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:${{ github.sha }} .
+        
     - name: Push Docker image
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
-        docker push foo:latest
-        docker push foo:${{ github.sha }}
+        docker push $IMAGE_NAME:latest
+        docker push $IMAGE_NAME:${{ github.sha }}
