@@ -39,7 +39,7 @@ jobs:
     - name: Build Docker image
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
-        docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:${{ github.sha }} .
+        docker build --platform linux/arm64 -t $IMAGE_NAME:latest -t $IMAGE_NAME:${{ github.sha }} .
         
     - name: Push Docker image
       run: |
