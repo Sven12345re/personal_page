@@ -19,8 +19,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            ls
-            cd /srv/mainpage # anpassen!
+            cd srv/mainpage # anpassen!
             docker compose pull
             docker compose up -d
             docker image prune -f
