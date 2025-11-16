@@ -35,13 +35,11 @@ jobs:
 
     - name: Build Docker image
       run: |
-        OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        IMAGE_NAME="ghcr.io/$OWNER/my-image"
+        IMAGE_NAME="ghcr.io/${{ github.repository_owner }}/my-image"
         docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:${{ github.sha }} .
 
     - name: Push Docker image
       run: |
-        OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        IMAGE_NAME="ghcr.io/$OWNER/my-image"
+        IMAGE_NAME="ghcr.io/${{ github.repository_owner }}/my-image"
         docker push $IMAGE_NAME:latest
         docker push $IMAGE_NAME:${{ github.sha }}
