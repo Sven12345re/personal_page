@@ -30,7 +30,7 @@ jobs:
     - name: Build and push multi-arch Docker image
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
-        docker buildx build \
+        docker build \
           --platform linux/arm64/v8 \
           -t $IMAGE_NAME:latest \
           -t $IMAGE_NAME:${{ github.sha }} \
