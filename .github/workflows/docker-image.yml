@@ -46,3 +46,4 @@ jobs:
       run: |
         IMAGE_NAME="ghcr.io/sven12345re/my-image"
         docker push foo:latest
+        docker push foo:${{ github.sha }}
