@@ -51,5 +51,4 @@ jobs:
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             cd srv/mainpage # passe diesen Pfad an dein Compose-Verzeichnis an
             docker pull --platform linux/arm64 ghcr.io/sven12345re/my-image:latest
-            docker compose up -d
-            docker image prune -f
+            docker compose -f docker-compose-ce.yaml up -d
